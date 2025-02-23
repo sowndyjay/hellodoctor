@@ -1,0 +1,200 @@
+/* General Styles */
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+  }
+  
+  /* Tufts University Color Scheme */
+  :root {
+    --tufts-blue: #3e8ede;
+    --tufts-brown: #7a6a51;
+    --tufts-light-blue: #a2d5f2;
+    --tufts-white: #ffffff;
+    --tufts-gray: #f0f0f0;
+  }
+  
+  /* Dashboard Container */
+  .patient-dashboard {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: var(--tufts-white);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Titles */
+  .dashboard-title {
+    font-size: 32px;
+    color: var(--tufts-blue);
+    margin-bottom: 24px;
+    text-align: center;
+    font-weight: 600;
+  }
+  
+  .section-title {
+    font-size: 26px;
+    color: var(--tufts-brown);
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+  
+  /* Filter Section */
+  .filter-section {
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  
+  .filter-label {
+    font-size: 16px;
+    color: var(--tufts-brown);
+  }
+  
+  .filter-input {
+    padding: 10px;
+    border: 1px solid var(--tufts-light-blue);
+    border-radius: 8px;
+    font-size: 14px;
+    color: var(--tufts-brown);
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .filter-input:focus {
+    border-color: var(--tufts-blue);
+  }
+  
+  .sort-button {
+    padding: 10px 20px;
+    background-color: var(--tufts-light-blue);
+    color: var(--tufts-brown);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+  }
+  
+  .sort-button.active {
+    background-color: var(--tufts-blue);
+    color: var(--tufts-white);
+  }
+  
+  .sort-button:hover {
+    background-color: var(--tufts-blue);
+    color: var(--tufts-white);
+  }
+  
+  /* Reports List */
+  .reports-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .report-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid var(--tufts-light-blue);
+    border-radius: 12px;
+    background-color: var(--tufts-white);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .report-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .report-details {
+    flex: 1;
+  }
+  
+  .report-details p {
+    margin: 6px 0;
+    color: var(--tufts-brown);
+    font-size: 16px;
+  }
+  
+  /* Buttons */
+  .download-button {
+    padding: 10px 20px;
+    background-color: var(--tufts-blue);
+    color: var(--tufts-white);
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .download-button:hover {
+    background-color: var(--tufts-brown);
+  }
+  
+  .generate-summary-button {
+    padding: 8px 16px; /* Smaller padding */
+    background-color: #2c6aa6; /* Darker blue */
+    color: var(--tufts-white);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px; /* Add space above the button */
+    font-size: 14px; /* Smaller font size */
+  }
+  
+  .generate-summary-button:hover {
+    background-color: #1a4a73; /* Even darker blue on hover */
+  }
+  
+  /* Icons */
+  .download-button i,
+  .generate-summary-button i {
+    font-size: 16px;
+  }
+  
+  /* Summary Section */
+  .summary-section {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: var(--tufts-gray);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .summary-section h3 {
+    font-size: 20px;
+    color: var(--tufts-blue);
+    margin-bottom: 10px;
+  }
+  
+  .summary-section p {
+    font-size: 16px;
+    color: var(--tufts-brown);
+  }
+  
+  /* Empty State */
+  .no-reports {
+    color: var(--tufts-brown);
+    text-align: center;
+    font-style: italic;
+    font-size: 18px;
+  }
