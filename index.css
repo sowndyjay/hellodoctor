@@ -1,200 +1,173 @@
-/* General Styles */
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Rowdies:wght@300;400;700&display=swap');
+
+/* Apply fonts */
 body {
-  font-family: "Poppins", sans-serif;
   margin: 0;
-  padding: 0;
-  background-color: #f8f9fa;
-  color: #333;
-}
-
-/* Tufts University Color Scheme */
-:root {
-  --tufts-blue: #3e8ede;
-  --tufts-brown: #7a6a51;
-  --tufts-light-blue: #a2d5f2;
-  --tufts-white: #ffffff;
-  --tufts-gray: #f0f0f0;
-}
-
-/* Dashboard Container */
-.patient-dashboard {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 30px;
-  background-color: var(--tufts-white);
-  border-radius: 15px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-}
-
-/* Titles */
-.dashboard-title {
-  font-size: 32px;
-  color: var(--tufts-blue);
-  margin-bottom: 24px;
-  text-align: center;
-  font-weight: 600;
-}
-
-.section-title {
-  font-size: 26px;
-  color: var(--tufts-brown);
-  margin-bottom: 20px;
-  font-weight: 500;
-}
-
-/* Filter Section */
-.filter-section {
-  margin-bottom: 24px;
+  font-family: 'Outfit', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #87CEEB; /* Tufts Light Blue */
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
+  height: 100vh;
 }
 
-.filter-label {
-  font-size: 16px;
-  color: var(--tufts-brown);
+/* Tufts-themed colors */
+:root {
+  --tufts-blue: #3E8EDE;
+  --tufts-dark-blue: #2C5AA0;
+  --tufts-light-blue: #87CEEB;
+  --tufts-brown: #7C6A5A;
+  --tufts-gold: #FFD700;
 }
 
-.filter-input {
-  padding: 10px;
-  border: 1px solid var(--tufts-light-blue);
+/* Login container */
+.login-container {
+  background-color: white;
+  padding: 2rem;
   border-radius: 8px;
-  font-size: 14px;
-  color: var(--tufts-brown);
-  outline: none;
-  transition: border-color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px; /* Increased width */
+  text-align: center;
 }
 
-.filter-input:focus {
-  border-color: var(--tufts-blue);
+.login-container h2 {
+  color: var(--tufts-blue);
+  margin-bottom: 2rem; /* Increased margin */
+  font-family: 'Rowdies', cursive;
+  font-size: 2.5rem; /* Larger font size */
 }
 
-.sort-button {
-  padding: 10px 20px;
-  background-color: var(--tufts-light-blue);
-  color: var(--tufts-brown);
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  font-weight: 500;
-}
-
-.sort-button.active {
-  background-color: var(--tufts-blue);
-  color: var(--tufts-white);
-}
-
-.sort-button:hover {
-  background-color: var(--tufts-blue);
-  color: var(--tufts-white);
-}
-
-/* Reports List */
-.reports-list {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.report-card {
+/* Role selection buttons */
+.role-buttons {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  border: 1px solid var(--tufts-light-blue);
-  border-radius: 12px;
-  background-color: var(--tufts-white);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 2rem; /* Increased margin */
 }
 
-.report-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.report-details {
+.role-buttons button {
   flex: 1;
+  padding: 1.5rem; /* HUGE padding */
+  border: none;
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.5rem; /* HUGE font size */
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.report-details p {
-  margin: 6px 0;
-  color: var(--tufts-brown);
-  font-size: 16px;
+.role-buttons button:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
-/* Buttons */
-.download-button {
-  padding: 10px 20px;
+.role-buttons button:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.role-buttons button.active {
   background-color: var(--tufts-blue);
-  color: var(--tufts-white);
-  border: none;
-  border-radius: 8px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  font-weight: 500;
+  color: white;
+}
+
+.role-buttons button:not(.active) {
+  background-color: #f3f4f6;
+  color: #4b5563;
+}
+
+.role-buttons button:hover {
+  transform: scale(1.05); /* Stronger hover effect */
+}
+
+/* Form styles */
+.login-form {
   display: flex;
-  align-items: center;
-  gap: 8px;
+  flex-direction: column;
 }
 
-.download-button:hover {
-  background-color: var(--tufts-brown);
+.login-form label {
+  text-align: left;
+  margin-bottom: 0.5rem; /* Adjusted margin */
+  color: #374151;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.25rem; /* Larger font size */
+  font-weight: 600; /* Bold labels */
 }
 
-.generate-summary-button {
-  padding: 8px 16px; /* Smaller padding */
-  background-color: #2c6aa6; /* Darker blue */
-  color: var(--tufts-white);
+.login-form input {
+  padding: 1rem; /* Increased padding */
+  border: 1px solid #d1d5db;
+  border-radius: 8px; /* Rounded corners */
+  margin-bottom: 1.5rem; /* Increased margin */
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.25rem; /* Larger font size */
+  width: 100%; /* Full width */
+}
+
+.login-form input:focus {
+  outline: none;
+  border-color: var(--tufts-blue);
+  box-shadow: 0 0 0 3px rgba(62, 142, 222, 0.2); /* Thicker focus ring */
+}
+
+.login-form button {
+  padding: 1.5rem; /* HUGE padding */
+  background-color: var(--tufts-blue);
+  color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 8px; /* Rounded corners */
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.5rem; /* HUGE font size */
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 8px; /* Add space above the button */
-  font-size: 14px; /* Smaller font size */
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.generate-summary-button:hover {
-  background-color: #1a4a73; /* Even darker blue on hover */
+.login-form button:hover {
+  background-color: var(--tufts-dark-blue);
+  transform: scale(1.05); /* Stronger hover effect */
 }
 
-/* Icons */
-.download-button i,
-.generate-summary-button i {
-  font-size: 16px;
+/* Error message */
+.error-message {
+  color: #ef4444;
+  font-size: 1rem; /* Larger font size */
+  margin-bottom: 1.5rem; /* Increased margin */
+  font-family: 'Outfit', sans-serif;
 }
 
-/* Summary Section */
-.summary-section {
-  margin-top: 20px;
-  padding: 20px;
-  background-color: var(--tufts-gray);
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* Welcome animation */
+.fade-in-out {
+  animation: fadeInOut 3s ease-in-out;
 }
 
-.summary-section h3 {
-  font-size: 20px;
-  color: var(--tufts-blue);
-  margin-bottom: 10px;
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
-.summary-section p {
-  font-size: 16px;
-  color: var(--tufts-brown);
+/* Login container animation */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
 }
 
-/* Empty State */
-.no-reports {
-  color: var(--tufts-brown);
-  text-align: center;
-  font-style: italic;
-  font-size: 18px;
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
