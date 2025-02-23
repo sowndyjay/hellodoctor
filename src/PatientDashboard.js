@@ -17,6 +17,13 @@ const PatientDashboard = ({ reports = [] }) => { // Provide a default value for 
     ? [...filteredReports].sort((a, b) => new Date(b.date) - new Date(a.date))
     : filteredReports;
 
+  // Handler for scheduling appointment form submission
+  const handleSchedule = (e) => {
+    e.preventDefault();
+    // Implement scheduling functionality here (e.g., API call, modal popup, etc.)
+    console.log("Appointment scheduled!");
+  };
+
   return (
     <div className="patient-dashboard">
       {/* Greeting */}
@@ -79,6 +86,44 @@ const PatientDashboard = ({ reports = [] }) => { // Provide a default value for 
           <p>{summary}</p>
         </div>
       )}
+
+      {/* Schedule Appointment Section */}
+      <section className="schedule-appointment-section">
+      <h2 className="section-title">Schedule an Appointment</h2>
+        <form onSubmit={handleSchedule}>
+          <div className="form-group">
+            <label htmlFor="appointment-date">Date:</label>
+            <input
+              type="date"
+              id="appointment-date"
+              name="appointment-date"
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="appointment-time">Time:</label>
+            <input
+              type="time"
+              id="appointment-time"
+              name="appointment-time"
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="doctor-select">Select Doctor:</label>
+            <select id="doctor-select" name="doctor-select" required>
+              <option value="">Select a doctor</option>
+              <option value="dr-smith">Dr. Eye</option>
+              <option value="dr-jones">Dr. Skin</option>
+              <option value="dr-jones">Dr. Blood</option>
+              <option value="dr-jones">Dr. Heart</option>
+            </select>
+          </div>
+          <button type="submit" className="schedule-button">
+            Schedule Appointment
+          </button>
+        </form>
+      </section>
     </div>
   );
 };
