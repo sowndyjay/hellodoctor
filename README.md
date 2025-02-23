@@ -1,4 +1,4 @@
-#Easy Doc
+## Easy Doc
 
 Team Chikoo's JumboHack 2025 project. Meet EasyDoc, our solution for doctors and documents.
 
