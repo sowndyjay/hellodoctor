@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+#Easy Doc
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Team Chikoo's JumboHack 2025 project. Meet EasyDoc, our solution for doctors and documents.
 
 ## Available Scripts
 
