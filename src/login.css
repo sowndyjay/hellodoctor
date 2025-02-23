@@ -1,0 +1,179 @@
+/* Login Container */
+.login-container {
+    background-color: white;
+    padding: 3rem; /* Increased padding */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+    width: 100%;
+    max-width: 600px; /* Increased max-width */
+    text-align: center;
+    margin: 0 auto; /* Center the container */
+  }
+  
+  /* Welcome Animation */
+  .fade-in-out {
+    animation: fadeInOut 3s ease-in-out;
+  }
+  
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  /* Welcome Heading */
+  .welcome-heading {
+    font-size: 3rem; /* Larger font size */
+    color: #3E8EDE; /* Tufts Blue */
+    margin-bottom: 1rem;
+    font-family: 'Rowdies', cursive;
+  }
+  
+  .welcome-subtitle {
+    font-size: 1.5rem; /* Larger font size */
+    color: #4b5563; /* Gray */
+    font-family: 'Outfit', sans-serif;
+  }
+  
+  /* Login Heading */
+  .login-heading {
+    font-size: 2.5rem; /* Larger font size */
+    color: #3E8EDE; /* Tufts Blue */
+    margin-bottom: 2rem;
+    font-family: 'Rowdies', cursive;
+  }
+  
+  /* Role Buttons */
+  .role-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    gap: 1rem; /* Added gap between buttons */
+  }
+  
+  .role-buttons button {
+    flex: 1;
+    padding: 1.5rem; /* HUGE padding */
+    border: none;
+    border-radius: 12px; /* Rounded corners */
+    cursor: pointer;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.5rem; /* HUGE font size */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .role-buttons button.active {
+    background-color: #3E8EDE; /* Tufts Blue */
+    color: white;
+  }
+  
+  .role-buttons button:not(.active) {
+    background-color: #f3f4f6; /* Light gray */
+    color: #4b5563; /* Dark gray */
+  }
+  
+  .role-buttons button:hover {
+    transform: scale(1.05); /* Stronger hover effect */
+  }
+  
+  /* Login Form */
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Added gap between form elements */
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* Added gap between label and input */
+  }
+  
+  .login-form label {
+    font-size: 1.25rem; /* Larger font size */
+    color: #374151; /* Dark gray */
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600; /* Bold labels */
+  }
+  
+  .login-form input {
+    padding: 1rem; /* Keep the same padding */
+    border: 1px solid #d1d5db; /* Light gray border */
+    border-radius: 8px; /* Rounded corners */
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.25rem; /* Keep the same font size */
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Ensure padding is included in the width */
+  }
+  
+  .login-form input:focus {
+    outline: none;
+    border-color: #3E8EDE; /* Tufts Blue */
+    box-shadow: 0 0 0 3px rgba(62, 142, 222, 0.2); /* Thicker focus ring */
+  }
+  
+  .login-form button {
+    padding: 1.5rem; /* HUGE padding */
+    background-color: #3E8EDE; /* Tufts Blue */
+    color: white;
+    border: none;
+    border-radius: 12px; /* Rounded corners */
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.5rem; /* HUGE font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .login-form button:hover {
+    background-color: #2C5AA0; /* Darker Tufts Blue */
+    transform: scale(1.05); /* Stronger hover effect */
+  }
+  
+  /* Error Message */
+  .error-message {
+    color: #ef4444; /* Red */
+    font-size: 1.25rem; /* Larger font size */
+    margin-bottom: 1.5rem;
+    font-family: 'Outfit', sans-serif;
+  }
+
+  /* Logo Styles */
+.logo {
+    position: absolute; /* Position the logo absolutely */
+    top: 20px; /* Distance from the top */
+    left: 20px; /* Distance from the left */
+    width: 100px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 10; /* Ensure the logo is above other elements */
+  }
+  
+  /* Login Container */
+  .login-container {
+    position: relative; /* Make the container a positioning context for the logo */
+    background-color: white;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    margin: 0 auto;
+  }
+  
+  /* Other existing styles... */
+
+  /* Global Logo Styles */
+.logo {
+    position: fixed; /* Fixed position for global placement */
+    top: 20px; /* Distance from the top */
+    left: 20px; /* Distance from the left */
+    width: 100px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 1000; /* Ensure it's above everything */
+  }

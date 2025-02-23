@@ -3,9 +3,6 @@ import { Tab } from '@headlessui/react';
 import './App.css';
 import { Link } from "react-router-dom";
 
-<Link to="/patient" className="text-blue-500 underline">Go to Patient Dashboard</Link>
-
-
 const DoctorDashboard = () => {
   const doctor = { name: 'Dr. Smith' };
 
@@ -55,6 +52,8 @@ const DoctorDashboard = () => {
     <div className="dashboard-container">
       <h1 className="dashboard-title">Welcome, {doctor.name}</h1>
       
+      
+
       <Tab.Group>
         <Tab.List className="tab-list">
           <Tab className="tab">Upload Report</Tab>
@@ -106,7 +105,11 @@ const DoctorDashboard = () => {
                         <td>{report.date}</td>
                         <td>{report.name}</td>
                         <td>
-                          <a href="#" download={report.name} className="download-link">Download</a>
+                          {patient === "Mikaela B" ? (
+                            <span className="text-red-500">Report Not Released</span>
+                          ) : (
+                            <a href="#" download={report.name} className="download-link">Download</a>
+                          )}
                         </td>
                       </tr>
                     ))}

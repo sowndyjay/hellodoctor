@@ -1,78 +1,264 @@
-.dashboard-container {
-  max-width: 900px;
-  margin: auto;
-  padding: 20px;
-  background: #f4f4f4;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.dashboard-title {
-  text-align: center;
-  font-size: 24px;
-  font-weight: bold;
+/* General Styles */
+body {
+  font-family: 'Outfit', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
   color: #333;
+  font-size: 18px;
+}
+/* General Styles */
+body {
+  font-family: 'Outfit', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  color: #333;
+  font-size: 18px;
 }
 
+/* Tufts-themed colors */
+:root {
+  --tufts-blue: #3e8ede;
+  --tufts-dark-blue: #2c5aa0;
+  --tufts-light-blue: #a2d5f2;
+  --tufts-brown: #7a6a51;
+  --tufts-white: #ffffff;
+  --tufts-gray: #f0f0f0;
+}
+
+/* Dashboard Container */
+.dashboard-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: var(--tufts-white);
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Dashboard Title */
+.dashboard-title {
+  font-size: 32px;
+  color: var(--tufts-blue);
+  margin-bottom: 24px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Tab List */
 .tab-list {
   display: flex;
-  gap: 10px;
-  margin: 20px 0;
-  overflow-x: auto;
+  justify-content: flex-start;
+  margin-bottom: 24px;
+  border-bottom: 2px solid var(--tufts-light-blue);
 }
 
 .tab {
-  padding: 10px 15px;
-  background: #007bff;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
+  padding: 12px 24px;
   border: none;
+  border-radius: 8px 8px 0 0;
+  cursor: pointer;
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: #f3f4f6;
+  color: #4b5563;
+  margin-right: 8px;
 }
 
 .tab:hover {
-  background: #0056b3;
+  background-color: var(--tufts-light-blue);
+  color: white;
+}
+
+.tab[aria-selected="true"] {
+  background-color: var(--tufts-blue);
+  color: white;
+}
+
+/* Upload Panel */
+.upload-panel {
+  padding: 24px;
+  background-color: #f9fafb;
+  border-radius: 12px;
+  margin-top: 16px;
+}
+
+.section-title {
+  font-size: 24px;
+  color: var(--tufts-blue);
+  margin-bottom: 16px;
+  font-weight: 500;
 }
 
 .upload-container {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 16px;
 }
 
-.input-field, .file-input {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+.input-field {
+  padding: 12px;
+  border: 1px solid var(--tufts-light-blue);
+  border-radius: 8px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
+.input-field:focus {
+  outline: none;
+  border-color: var(--tufts-blue);
+  box-shadow: 0 0 0 3px rgba(62, 142, 222, 0.2);
+}
+
+.file-input {
+  padding: 12px;
+  border: 1px solid var(--tufts-light-blue);
+  border-radius: 8px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
+  width: 100%;
+}
+
+/* Patient Panel */
 .patient-panel {
-  padding: 20px;
+  padding: 24px;
+  background-color: #f9fafb;
+  border-radius: 12px;
+  margin-top: 16px;
+}
+
+.patient-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--tufts-blue);
+  margin-bottom: 16px;
+  font-family: 'Rowdies', cursive;
+  font-size: 24px;
 }
 
 .patient-avatar {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  margin-right: 10px;
+}
+
+/* Table Styles */
+.table-container {
+  overflow-x: auto;
 }
 
 .report-table {
   width: 100%;
   border-collapse: collapse;
+  margin-top: 16px;
 }
 
-.report-table th, .report-table td {
-  border: 1px solid #ddd;
-  padding: 10px;
+.report-table th,
+.report-table td {
+  padding: 12px;
+  border: 1px solid var(--tufts-light-blue);
   text-align: left;
 }
 
+.report-table th {
+  background-color: var(--tufts-blue);
+  color: white;
+  font-family: 'Rowdies', cursive;
+  font-size: 18px;
+}
+
+.report-table td {
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
+}
+
+/* Released Column */
+.report-table th:nth-child(3),
+.report-table td:nth-child(3) {
+  text-align: center;
+}
+
+/* Download Link */
 .download-link {
-  color: #007bff;
+  color: var(--tufts-blue);
   text-decoration: none;
+  font-weight: 600;
 }
 
 .download-link:hover {
   text-decoration: underline;
+}
+
+/* Request Release Button */
+.request-release-button {
+  padding: 8px 16px;
+  background-color: var(--tufts-blue);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.request-release-button:hover {
+  background-color: var(--tufts-dark-blue);
+}
+
+/* Pending Release Text */
+.pending-release {
+  color: var(--tufts-brown);
+  font-style: italic;
+}
+
+/* Green "Yes" box */
+.released-status.yes-box {
+  background-color: #4CAF50; /* Green background */
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+/* Download button */
+.download-button {
+  background-color: #007BFF; /* Blue background */
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.download-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Pending Release text */
+.pending-release {
+  color: #FFA500; /* Orange color */
+  font-weight: bold;
+}
+
+/* Request Release button */
+.request-release-button {
+  background-color: #FFA500; /* Orange background */
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.request-release-button:hover {
+  background-color: #cc8400; /* Darker orange on hover */
 }

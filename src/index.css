@@ -1,13 +1,330 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Rowdies:wght@300;400;700&display=swap');
+
+/* Apply fonts */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Outfit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #87CEEB; /* Tufts Light Blue */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Tufts-themed colors */
+:root {
+  --tufts-blue: #3E8EDE;
+  --tufts-dark-blue: #2C5AA0;
+  --tufts-light-blue: #87CEEB;
+  --tufts-brown: #7C6A5A;
+  --tufts-gold: #FFD700;
+}
+
+/* Login container */
+.login-container {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px; /* Increased width */
+  text-align: center;
+}
+
+.login-container h2 {
+  color: var(--tufts-blue);
+  margin-bottom: 2rem; /* Increased margin */
+  font-family: 'Rowdies', cursive;
+  font-size: 2.5rem; /* Larger font size */
+}
+
+/* Role selection buttons */
+.role-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem; /* Increased margin */
+}
+
+.role-buttons button {
+  flex: 1;
+  padding: 1.5rem; /* HUGE padding */
+  border: none;
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.5rem; /* HUGE font size */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.role-buttons button:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.role-buttons button:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.role-buttons button.active {
+  background-color: var(--tufts-blue);
+  color: white;
+}
+
+.role-buttons button:not(.active) {
+  background-color: #f3f4f6;
+  color: #4b5563;
+}
+
+.role-buttons button:hover {
+  transform: scale(1.05); /* Stronger hover effect */
+}
+
+/* Form styles */
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form label {
+  text-align: left;
+  margin-bottom: 0.5rem; /* Adjusted margin */
+  color: #374151;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.25rem; /* Larger font size */
+  font-weight: 600; /* Bold labels */
+}
+
+.login-form input {
+  padding: 1rem; /* Increased padding */
+  border: 1px solid #d1d5db;
+  border-radius: 8px; /* Rounded corners */
+  margin-bottom: 1.5rem; /* Increased margin */
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.25rem; /* Larger font size */
+  width: 100%; /* Full width */
+}
+
+.login-form input:focus {
+  outline: none;
+  border-color: var(--tufts-blue);
+  box-shadow: 0 0 0 3px rgba(62, 142, 222, 0.2); /* Thicker focus ring */
+}
+
+.login-form button {
+  padding: 1.5rem; /* HUGE padding */
+  background-color: var(--tufts-blue);
+  color: white;
+  border: none;
+  border-radius: 8px; /* Rounded corners */
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.5rem; /* HUGE font size */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.login-form button:hover {
+  background-color: var(--tufts-dark-blue);
+  transform: scale(1.05); /* Stronger hover effect */
+}
+
+/* Error message */
+.error-message {
+  color: #ef4444;
+  font-size: 1rem; /* Larger font size */
+  margin-bottom: 1.5rem; /* Increased margin */
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Welcome animation */
+.fade-in-out {
+  animation: fadeInOut 3s ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Login container animation */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dashboard container */
+.dashboard-container {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+}
+
+.dashboard-title {
+  color: var(--tufts-blue);
+  margin-bottom: 2rem;
+  font-family: 'Rowdies', cursive;
+  font-size: 2.5rem;
+}
+
+/* Tab list */
+.tab-list {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--tufts-light-blue);
+}
+
+.tab {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px 8px 0 0;
+  cursor: pointer;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.25rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  background-color: #f3f4f6;
+  color: #4b5563;
+  margin-right: 0.5rem;
+}
+
+.tab:hover {
+  background-color: var(--tufts-light-blue);
+  color: white;
+}
+
+.tab[aria-selected="true"] {
+  background-color: var(--tufts-blue);
+  color: white;
+}
+
+/* Upload panel */
+.upload-panel {
+  padding: 2rem;
+  background-color: #f9fafb;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.section-title {
+  color: var(--tufts-blue);
+  margin-bottom: 1.5rem;
+  font-family: 'Rowdies', cursive;
+  font-size: 2rem;
+}
+
+.upload-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.input-field {
+  padding: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: var(--tufts-blue);
+  box-shadow: 0 0 0 3px rgba(62, 142, 222, 0.2);
+}
+
+.file-input {
+  padding: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  width: 100%;
+}
+
+/* Patient panel */
+.patient-panel {
+  padding: 2rem;
+  background-color: #f9fafb;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.patient-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--tufts-blue);
+  margin-bottom: 1.5rem;
+  font-family: 'Rowdies', cursive;
+  font-size: 2rem;
+}
+
+.patient-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.report-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.report-table th, .report-table td {
+  padding: 1rem;
+  border: 1px solid #d1d5db;
+  text-align: left;
+}
+
+.report-table th {
+  background-color: var(--tufts-blue);
+  color: white;
+  font-family: 'Rowdies', cursive;
+  font-size: 1.25rem;
+}
+
+.report-table td {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+}
+
+.download-link {
+  color: var(--tufts-blue);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.download-link:hover {
+  text-decoration: underline;
 }
