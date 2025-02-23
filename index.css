@@ -1,17 +1,87 @@
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Rowdies:wght@300;400;700&display=swap');
 
-/* Apply fonts */
-body {
+
+/* General Reset */
+* {
   margin: 0;
-  font-family: 'Outfit', sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+  font-family: 'Outfit', sans-serif; /* Default font */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #87CEEB; /* Tufts Light Blue */
+  background-color: #3E8EDE; /* Tufts Blue background */
+  color: #333; /* Default text color */
+  line-height: 1.6;
+  min-height: 100vh; /* Ensure body takes full viewport height */
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  padding: 2rem;
+}
+
+/* Root Container */
+#root {
+  width: 100%;
+  max-width: 1200px; /* Limit max width for larger screens */
+  margin: 0 auto; /* Center the content */
+}
+
+/* Links */
+a {
+  color: #3E8EDE; /* Tufts Blue */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #2C5AA0; /* Darker Tufts Blue */
+}
+
+/* Buttons */
+button {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* Utility Classes */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
 }
 
 /* Tufts-themed colors */
@@ -21,153 +91,4 @@ body {
   --tufts-light-blue: #87CEEB;
   --tufts-brown: #7C6A5A;
   --tufts-gold: #FFD700;
-}
-
-/* Login container */
-.login-container {
-  background-color: white;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 500px; /* Increased width */
-  text-align: center;
-}
-
-.login-container h2 {
-  color: var(--tufts-blue);
-  margin-bottom: 2rem; /* Increased margin */
-  font-family: 'Rowdies', cursive;
-  font-size: 2.5rem; /* Larger font size */
-}
-
-/* Role selection buttons */
-.role-buttons {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 2rem; /* Increased margin */
-}
-
-.role-buttons button {
-  flex: 1;
-  padding: 1.5rem; /* HUGE padding */
-  border: none;
-  border-radius: 8px; /* Rounded corners */
-  cursor: pointer;
-  font-family: 'Outfit', sans-serif;
-  font-size: 1.5rem; /* HUGE font size */
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.role-buttons button:first-child {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-.role-buttons button:last-child {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
-
-.role-buttons button.active {
-  background-color: var(--tufts-blue);
-  color: white;
-}
-
-.role-buttons button:not(.active) {
-  background-color: #f3f4f6;
-  color: #4b5563;
-}
-
-.role-buttons button:hover {
-  transform: scale(1.05); /* Stronger hover effect */
-}
-
-/* Form styles */
-.login-form {
-  display: flex;
-  flex-direction: column;
-}
-
-.login-form label {
-  text-align: left;
-  margin-bottom: 0.5rem; /* Adjusted margin */
-  color: #374151;
-  font-family: 'Outfit', sans-serif;
-  font-size: 1.25rem; /* Larger font size */
-  font-weight: 600; /* Bold labels */
-}
-
-.login-form input {
-  padding: 1rem; /* Increased padding */
-  border: 1px solid #d1d5db;
-  border-radius: 8px; /* Rounded corners */
-  margin-bottom: 1.5rem; /* Increased margin */
-  font-family: 'Outfit', sans-serif;
-  font-size: 1.25rem; /* Larger font size */
-  width: 100%; /* Full width */
-}
-
-.login-form input:focus {
-  outline: none;
-  border-color: var(--tufts-blue);
-  box-shadow: 0 0 0 3px rgba(62, 142, 222, 0.2); /* Thicker focus ring */
-}
-
-.login-form button {
-  padding: 1.5rem; /* HUGE padding */
-  background-color: var(--tufts-blue);
-  color: white;
-  border: none;
-  border-radius: 8px; /* Rounded corners */
-  font-family: 'Outfit', sans-serif;
-  font-size: 1.5rem; /* HUGE font size */
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.login-form button:hover {
-  background-color: var(--tufts-dark-blue);
-  transform: scale(1.05); /* Stronger hover effect */
-}
-
-/* Error message */
-.error-message {
-  color: #ef4444;
-  font-size: 1rem; /* Larger font size */
-  margin-bottom: 1.5rem; /* Increased margin */
-  font-family: 'Outfit', sans-serif;
-}
-
-/* Welcome animation */
-.fade-in-out {
-  animation: fadeInOut 3s ease-in-out;
-}
-
-@keyframes fadeInOut {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-/* Login container animation */
-.fade-in {
-  animation: fadeIn 0.5s ease-in-out;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }

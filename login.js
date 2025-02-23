@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './login.css'; // Import the Login CSS file
+import logo from './assets/EasyDoc.png'; // Adjust the path to your logo
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -30,6 +32,9 @@ const Login = () => {
 
   return (
     <div className="login-container">
+      {/* Logo in the top-left corner */}
+      <img src={logo} alt="EasyDoc Logo" className="logo" />
+
       {showWelcome ? (
         <div className="fade-in-out">
           <h1 className="welcome-heading">Welcome to EasyDoc</h1>
