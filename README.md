@@ -45,7 +45,26 @@ Looking ahead, the next steps for EasyDoc involve:
 ## Installation & Setup
 
 To set up and run EasyDoc locally, follow these steps:
-*(Please add specific installation instructions here, e.g., cloning the repo, `npm install` for client/server, MongoDB setup, environment variables.)*
+
+
+### 1. Copy paste this
+
+```bash
+git clone https://github.com/sowndyjay/hellodoctor.git
+cd hellodoctor
+
+cd server
+npm install
+
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret_key
+
+npm start
+
+REACT_APP_API_BASE_URL=http://localhost:5000
+
+npm start
 
 ## Usage
 
